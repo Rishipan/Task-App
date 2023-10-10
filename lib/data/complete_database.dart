@@ -8,7 +8,12 @@ class TaskDataBaseComplete {
 
   void createInitialDataComplete() {
     complete = [
-      ['Default Task', 'Default Content', '10:00 AM', true]
+      [
+        'Manual:-',
+        '-Slide me left to edit\n-Slide me left to delete\n-When task completed then\n you can checked me ✅🏁',
+        '🫡',
+        true
+      ]
     ];
   }
 

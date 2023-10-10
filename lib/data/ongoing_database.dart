@@ -8,7 +8,12 @@ class TaskDataBaseOngoing {
 
   void createInitialDataOngoing() {
     ongoing = [
-      ['Default Task', 'Default Content', '10:00 AM', false]
+      [
+        'Manual:-',
+        '-Slide me left to edit\n-Slide me left to delete\n-When task completed then\n you can checked me ✅🏁',
+        'Now',
+        false
+      ]
     ];
   }
 

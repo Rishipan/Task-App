@@ -109,37 +109,3 @@ class _TaskTileState extends State<TaskTile> {
     );
   }
 }
-/*
-Expanded(
-        child: Container(
-          height: 100,
-          padding: const EdgeInsets.all(24),
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Colors.orange, Colors.amber],
-            ),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text('Title'),
-                  Text('Content'),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text('10:00 AM'),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-*/ 
