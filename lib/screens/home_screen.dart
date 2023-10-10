@@ -3,12 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_task/data/complete_database.dart';
 import 'package:todo_task/data/ongoing_database.dart';
+import 'package:todo_task/data/user_data.dart';
 import 'package:todo_task/utils/task_tile.dart';
 
 import '../utils/dialog_box.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final String? name;
+  const HomeScreen({
+    super.key,
+    this.name,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -172,6 +177,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     int cnto = dbo.ongoing.length;
     int cntc = dbc.complete.length;
+    int oper = (cnto / (cnto + cntc) * 100).round();
+    int cper = (cntc / (cnto + cntc) * 100).round();
+
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
@@ -184,18 +192,11 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.search,
-                  color: Colors.grey.shade600,
-                ),
-                const SizedBox(width: 6),
-                Icon(
-                  Icons.notifications,
-                  color: Colors.grey.shade600,
-                ),
-              ],
+            child: GestureDetector(
+              child: const Icon(
+                Icons.person_outline,
+                color: Colors.black,
+              ),
             ),
           ),
         ],
@@ -205,6 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           backgroundColor: Colors.grey.shade100,
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: Colors.transparent,
             elevation: 0,
             title: Column(
@@ -218,17 +220,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 20,
                   ),
                 ),
-                // Text(
-                //   '$count total task ',
-                //   style: TextStyle(
-                //     color: Colors.red.shade200,
-                //     fontSize: 14,
-                //   ),
-                // ),
                 Text(
-                  '$cnto task pending',
+                  '$cntc task completed ($cper %)',
                   style: TextStyle(
                     color: Colors.green.shade200,
+                    fontSize: 14,
+                  ),
+                ),
+                Text(
+                  '$cnto task pending ($oper %)',
+                  style: TextStyle(
+                    color: Colors.red.shade200,
                     fontSize: 14,
                   ),
                 ),
