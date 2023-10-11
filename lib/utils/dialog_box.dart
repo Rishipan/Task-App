@@ -41,7 +41,7 @@ class DialogBox extends StatelessWidget {
               textInputAction: TextInputAction.newline,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Task Content',
+                labelText: 'Task Content(optional)',
               ),
             ),
             TextField(

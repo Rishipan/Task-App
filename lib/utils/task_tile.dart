@@ -6,12 +6,12 @@ class TaskTile extends StatefulWidget {
   final String taskContent;
   final String taskTime;
   final bool taskCompleted;
-  Function(bool?)? onChanged;
-  Function(BuildContext)? deleteTask;
+  final Function(bool?)? onChanged;
+  final Function(BuildContext)? deleteTask;
   final Function(BuildContext)? updateTask;
 
-  TaskTile({
-    super.key,
+  const TaskTile({
+    Key? key,
     required this.taskTitle,
     required this.taskContent,
     required this.taskTime,
@@ -19,7 +19,7 @@ class TaskTile extends StatefulWidget {
     required this.onChanged,
     required this.deleteTask,
     required this.updateTask,
-  });
+  }) : super(key: key);
 
   @override
   State<TaskTile> createState() => _TaskTileState();
@@ -60,6 +60,7 @@ class _TaskTileState extends State<TaskTile> {
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

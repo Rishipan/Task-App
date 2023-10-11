@@ -10,7 +10,7 @@ class TaskDataBaseComplete {
     complete = [
       [
         'Manual:-',
-        '-Slide me left to edit\n-Slide me left to delete\n-When task completed then\n you can checked me ✅🏁',
+        '-Slide me left to edit\n-Slide me left to delete\n-When task completed\nthen you can check me ✅',
         '🫡',
         true
       ]

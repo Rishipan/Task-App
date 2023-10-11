@@ -90,9 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // save new task
   void saveNewTask() {
-    if (_titleController.text.isEmpty || _contentController.text.isEmpty) {
+    if (_titleController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Plese fill all required values!!')));
+          const SnackBar(content: Text('Plese fill all Title!!')));
     } else {
       setState(() {
         dbo.ongoing.add([
